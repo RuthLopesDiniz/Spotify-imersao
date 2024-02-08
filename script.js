@@ -3,7 +3,7 @@ const resultArtist = document.getElementById("result-artist");
 const resultPlaylist = document.getElementById('result-playlists');
 
 function requestApi(searchTerm) {
-    const url = `http://localhost:3000/artists?name_like=${searchTerm}`
+    const url = `https://json-artists.vercel.app/artists?name_like=${searchTerm}`
     fetch(url)
         .then((response) => response.json())
         .then((result) => displayResults(result))
@@ -33,6 +33,6 @@ document.addEventListener('input', function () {
     requestApi(searchTerm);
 })
 
-/* json-server --watch api-artists/artists.json 
+/* json-server --watch api-artists/artists.json - para testar localmente o servidor de dados
 --port 3000 */
 /* para fazer a api funcionar/rodar/servir */
